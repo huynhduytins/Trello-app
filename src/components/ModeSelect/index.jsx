@@ -23,19 +23,19 @@ function ModeSelect() {
       >
         <MenuItem value="light">
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-            <LightModeIcon />
+            <LightModeIcon sx={{ width: '20px', height: '20px' }} />
             Light
           </Box>
         </MenuItem>
         <MenuItem value="dark">
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-            <DarkModeIcon />
+            <DarkModeIcon sx={{ width: '20px', height: '20px' }} />
             Dark
           </Box>
         </MenuItem>
         <MenuItem value="system">
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-            <DesktopMacIcon />
+            <DesktopMacIcon sx={{ width: '20px', height: '20px' }} />
             System
           </Box>
         </MenuItem>
