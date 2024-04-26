@@ -1,7 +1,7 @@
 import { Box } from '@mui/material'
-import ModeSelect from '../ModeSelect'
+import ModeSelect from '~/components/ModeSelect'
 
-const index = () => {
+const AppBar = () => {
   return (
     <Box
       sx={{
@@ -17,4 +17,4 @@ const index = () => {
   )
 }
 
-export default index
+export default AppBar
