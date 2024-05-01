@@ -1,7 +1,8 @@
-import { Box } from '@mui/material'
+import { Box, SvgIcon } from '@mui/material'
 import ModeSelect from '~/components/ModeSelect'
 
 import AppsIcon from '@mui/icons-material/Apps'
+import { ReactComponent as TrelloLogo } from './../../assets/trello.svg'
 
 const AppBar = () => {
   return (
@@ -20,8 +21,8 @@ const AppBar = () => {
           alignItems: 'center'
         }}
       >
-        <AppsIcon />
-        Trello
+        <AppsIcon sx={{ color: 'primary.main' }} />
+        <SvgIcon component={TrelloLogo} inheritViewBox />
       </Box>
       <Box>
         <ModeSelect />
