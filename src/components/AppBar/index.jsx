@@ -1,12 +1,25 @@
-import { Box, Button, SvgIcon, TextField, Typography } from '@mui/material'
-import ModeSelect from '~/components/ModeSelect'
+import {
+  Avatar,
+  Badge,
+  Box,
+  Button,
+  SvgIcon,
+  TextField,
+  Tooltip,
+  Typography
+} from '@mui/material'
 
-import AppsIcon from '@mui/icons-material/Apps'
 import TrelloLogo from '~/assets/trello.svg?react'
+import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone'
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
+
+import ModeSelect from '~/components/ModeSelect'
+import AppsIcon from '@mui/icons-material/Apps'
 import WorkSpace from './Menus/WorkSpace'
 import Recent from './Menus/Recent'
 import Starred from './Menus/Starred'
 import Template from './Menus/Template'
+import Profile from './Menus/Profile'
 
 const AppBar = () => {
   return (
@@ -71,6 +84,17 @@ const AppBar = () => {
           size="small"
         />
         <ModeSelect />
+        <Tooltip title="Notifications">
+          <Badge badgeContent={0} color="primary" sx={{ cursor: 'pointer' }}>
+            <NotificationsNoneIcon sx={{ color: 'primary.main' }} />
+          </Badge>
+        </Tooltip>
+        <Tooltip title="Help">
+          <Badge badgeContent={0} color="primary" sx={{ cursor: 'pointer' }}>
+            <HelpOutlineIcon sx={{ color: 'primary.main' }} />
+          </Badge>
+        </Tooltip>
+        <Profile />
       </Box>
     </Box>
   )
