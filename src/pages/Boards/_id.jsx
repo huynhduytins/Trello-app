@@ -10,7 +10,7 @@ const Board = () => {
         height: '100vh'
       }}
       disableGutters
-      maxWidth
+      maxWidth={false}
     >
       <AppBar />
       <BoardBar />
