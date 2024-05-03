@@ -1,17 +1,80 @@
-import { Box } from '@mui/material'
+import { Avatar, AvatarGroup, Box, Chip } from '@mui/material'
+import DashboardIcon from '@mui/icons-material/Dashboard'
+import VpnLockIcon from '@mui/icons-material/VpnLock'
+import AddToDriveIcon from '@mui/icons-material/AddToDrive'
+import BoltIcon from '@mui/icons-material/Bolt'
+import FilterListIcon from '@mui/icons-material/FilterList'
 
+const MENU_STYLE = {
+  color: 'primary.main',
+  backgroundColor: 'white',
+  border: 'none',
+  paddingX: '5px',
+  '& .MuiSvgIcon-root': {
+    color: 'primary.main'
+  },
+  '&:hover': {
+    bgcolor: 'primary.50'
+  }
+}
 const BoardBar = () => {
   return (
     <Box
       sx={{
-        backgroundColor: 'primary.dark',
+        // backgroundColor: 'primary.dark',
         width: '100%',
         height: (theme) => theme.custom.boardBarHeight,
         display: 'flex',
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        gap: 2,
+        padding: 2,
+        overflowX: 'auto',
+        overflowY: 'hidden',
+        borderTop: '1px solid #00bfa5'
       }}
     >
-      Board Bar
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+        <Chip
+          sx={MENU_STYLE}
+          icon={<DashboardIcon />}
+          label="Dashboard"
+          clickable
+        />
+        <Chip
+          sx={MENU_STYLE}
+          icon={<VpnLockIcon />}
+          label="Public/Private Workspace"
+          clickable
+        />
+        <Chip
+          sx={MENU_STYLE}
+          icon={<AddToDriveIcon />}
+          label="Add to Google Drive"
+          clickable
+        />
+        <Chip
+          sx={MENU_STYLE}
+          icon={<BoltIcon />}
+          label="Automation"
+          clickable
+        />
+        <Chip
+          sx={MENU_STYLE}
+          icon={<FilterListIcon />}
+          label="Filter"
+          clickable
+        />
+      </Box>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+        <AvatarGroup max={4}>
+          <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+          <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
+          <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+          <Avatar alt="Agnes Walker" src="/static/images/avatar/4.jpg" />
+          <Avatar alt="Trevor Henderson" src="/static/images/avatar/5.jpg" />
+        </AvatarGroup>
+      </Box>
     </Box>
   )
 }
