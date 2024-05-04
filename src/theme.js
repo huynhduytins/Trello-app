@@ -6,20 +6,7 @@ const theme = extendTheme({
     appBarHeight: '58px',
     boardBarHeight: '60px'
   },
-  colorSchemes: {
-    light: {
-      palette: {
-        primary: teal,
-        secondary: deepOrange
-      }
-    },
-    dark: {
-      palette: {
-        primary: cyan,
-        secondary: orange
-      }
-    }
-  },
+  colorSchemes: {},
   components: {
     MuiCssBaseline: {
       styleOverrides: {
@@ -48,7 +35,6 @@ const theme = extendTheme({
     MuiInputLabel: {
       styleOverrides: {
         root: ({ theme }) => ({
-          color: theme.palette.primary.main,
           fontSize: '0.875rem'
         })
       }
@@ -64,18 +50,13 @@ const theme = extendTheme({
     MuiOutlinedInput: {
       styleOverrides: {
         root: ({ theme }) => ({
-          color: theme.palette.primary.main,
           fontSize: '0.875rem',
-          '.MuiOutlinedInput-notchedOutline': {
-            borderColor: theme.palette.primary.light
-          },
+          '.MuiOutlinedInput-notchedOutline': {},
           '& fieldset': {
             borderWidth: '1px !important'
           },
           '&:hover': {
-            '.MuiOutlinedInput-notchedOutline': {
-              borderColor: theme.palette.primary.main
-            }
+            '.MuiOutlinedInput-notchedOutline': {}
           }
         })
       }

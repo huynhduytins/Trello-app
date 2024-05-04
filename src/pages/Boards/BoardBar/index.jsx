@@ -4,6 +4,7 @@ import VpnLockIcon from '@mui/icons-material/VpnLock'
 import AddToDriveIcon from '@mui/icons-material/AddToDrive'
 import BoltIcon from '@mui/icons-material/Bolt'
 import FilterListIcon from '@mui/icons-material/FilterList'
+import PersonAddIcon from '@mui/icons-material/PersonAdd'
 
 const MENU_STYLE = {
   color: 'primary.main',
@@ -28,7 +29,8 @@ const BoardBar = () => {
         alignItems: 'center',
         justifyContent: 'space-between',
         gap: 2,
-        padding: 2,
+        paddingY: 2,
+        paddingX: 1,
         overflowX: 'auto',
         overflowY: 'hidden',
         borderTop: '1px solid #00bfa5'
@@ -67,6 +69,12 @@ const BoardBar = () => {
         />
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+        <Chip
+          sx={{ ...MENU_STYLE, border: '1px solid', borderRadius: '5px' }}
+          icon={<PersonAddIcon />}
+          label="Invite"
+          clickable
+        />
         <AvatarGroup max={4}>
           <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
           <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
