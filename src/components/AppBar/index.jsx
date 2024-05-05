@@ -1,15 +1,13 @@
 import AppsIcon from '@mui/icons-material/Apps'
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone'
-import {
-  Badge,
-  Box,
-  Button,
-  SvgIcon,
-  TextField,
-  Tooltip,
-  Typography
-} from '@mui/material'
+import Badge from '@mui/material'
+import Box from '@mui/material'
+import Button from '@mui/material'
+import SvgIcon from '@mui/material'
+import TextField from '@mui/material'
+import Tooltip from '@mui/material'
+import Typography from '@mui/material'
 
 import Profile from './Menus/Profile'
 import Recent from './Menus/Recent'
