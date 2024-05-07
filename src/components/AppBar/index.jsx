@@ -1,13 +1,17 @@
 import AppsIcon from '@mui/icons-material/Apps'
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone'
-import Badge from '@mui/material'
-import Box from '@mui/material'
-import Button from '@mui/material'
-import SvgIcon from '@mui/material'
-import TextField from '@mui/material'
-import Tooltip from '@mui/material'
-import Typography from '@mui/material'
+import LibraryAddIcon from '@mui/icons-material/LibraryAdd'
+import InputAdornment from '@mui/material/InputAdornment'
+import SearchIcon from '@mui/icons-material/Search'
+
+import Badge from '@mui/material/Badge'
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import SvgIcon from '@mui/material/SvgIcon'
+import TextField from '@mui/material/TextField'
+import Tooltip from '@mui/material/Tooltip'
+import Typography from '@mui/material/Typography'
 
 import Profile from './Menus/Profile'
 import Recent from './Menus/Recent'
@@ -29,7 +33,9 @@ const AppBar = () => {
         alignItems: 'center',
         gap: 2,
         overflowX: 'auto',
-        overflowY: 'hidden'
+        overflowY: 'hidden',
+        bgcolor: (theme) =>
+          theme.palette.mode === 'dark' ? '#2c3e50' : '#1565c0'
       }}
     >
       <Box
@@ -39,7 +45,7 @@ const AppBar = () => {
           gap: 2
         }}
       >
-        <AppsIcon sx={{ color: 'primary.main' }} />
+        <AppsIcon sx={{ color: 'white' }} />
         <Box
           sx={{
             display: 'flex',
@@ -51,13 +57,13 @@ const AppBar = () => {
             component={TrelloLogo}
             inheritViewBox
             fontSize="small"
-            sx={{ color: 'primary.main' }}
+            sx={{ color: 'white' }}
           />
           <Typography
             sx={{
               fontSize: '1.2rem',
               fontWeight: 'bold',
-              color: 'primary.main'
+              color: 'white'
             }}
           >
             Trello
@@ -68,7 +74,19 @@ const AppBar = () => {
           <Recent />
           <Starred />
           <Template />
-          <Button variant="outlined">Create</Button>
+          <Button
+            variant="outlined"
+            sx={{
+              color: 'white',
+              border: 'none',
+              '&:hover': {
+                border: 'none'
+              }
+            }}
+            startIcon={<LibraryAddIcon />}
+          >
+            Create
+          </Button>
         </Box>
       </Box>
       <Box
@@ -83,17 +101,36 @@ const AppBar = () => {
           label="Search..."
           type="search"
           size="small"
-          sx={{ minWidth: '120px' }}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <SearchIcon sx={{ color: 'white' }} />
+              </InputAdornment>
+            )
+          }}
+          sx={{
+            minWidth: '120px',
+            maxWidth: '170px',
+            '& label': {
+              color: 'white'
+            },
+            '& input': {
+              color: 'white'
+            },
+            '& label.Mui-focused': {
+              color: 'white'
+            }
+          }}
         />
         <ModeSelect />
         <Tooltip title="Notifications">
           <Badge badgeContent={0} color="primary" sx={{ cursor: 'pointer' }}>
-            <NotificationsNoneIcon sx={{ color: 'primary.main' }} />
+            <NotificationsNoneIcon sx={{ color: 'white' }} />
           </Badge>
         </Tooltip>
         <Tooltip title="Help">
           <Badge badgeContent={0} color="primary" sx={{ cursor: 'pointer' }}>
-            <HelpOutlineIcon sx={{ color: 'primary.main' }} />
+            <HelpOutlineIcon sx={{ color: 'white' }} />
           </Badge>
         </Tooltip>
         <Profile />
