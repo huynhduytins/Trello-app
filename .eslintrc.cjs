@@ -8,7 +8,7 @@ module.exports = {
   ],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   settings: { react: { version: '18.2' } },
-  plugins: ['react', 'react-hooks', 'react-refresh'],
+  plugins: ['react', 'react-hooks', 'react-refresh', 'simple-import-sort'],
   rules: {
     //React
     'react-refresh/only-export-components': 'warn',
@@ -16,6 +16,10 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     'react/prop-types': 0,
     'react/display-name': 0,
+
+    // Sort import
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
 
     //Mui
     'no-restricted-imports': [

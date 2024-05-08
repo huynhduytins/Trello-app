@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 import DesktopMacIcon from '@mui/icons-material/DesktopMac'
 import LightModeIcon from '@mui/icons-material/LightMode'
@@ -8,6 +6,7 @@ import FormControl from '@mui/material/FormControl'
 import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import Select from '@mui/material/Select'
+import { useState } from 'react'
 
 function ModeSelect() {
   const [mode, setMode] = useState('light')

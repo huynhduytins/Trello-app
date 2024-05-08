@@ -1,25 +1,25 @@
 import AppsIcon from '@mui/icons-material/Apps'
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
-import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone'
 import LibraryAddIcon from '@mui/icons-material/LibraryAdd'
-import InputAdornment from '@mui/material/InputAdornment'
+import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone'
 import SearchIcon from '@mui/icons-material/Search'
-
 import Badge from '@mui/material/Badge'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
+import InputAdornment from '@mui/material/InputAdornment'
 import SvgIcon from '@mui/material/SvgIcon'
 import TextField from '@mui/material/TextField'
 import Tooltip from '@mui/material/Tooltip'
 import Typography from '@mui/material/Typography'
+
+import TrelloLogo from '~/assets/trello.svg?react'
+import ModeSelect from '~/components/ModeSelect'
 
 import Profile from './Menus/Profile'
 import Recent from './Menus/Recent'
 import Starred from './Menus/Starred'
 import Template from './Menus/Template'
 import WorkSpace from './Menus/WorkSpace'
-import TrelloLogo from '~/assets/trello.svg?react'
-import ModeSelect from '~/components/ModeSelect'
 
 const AppBar = () => {
   return (
