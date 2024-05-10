@@ -17,7 +17,7 @@ module.exports = {
     'react/prop-types': 0,
     'react/display-name': 0,
 
-    // Sort import
+    // Sort impor
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
 
