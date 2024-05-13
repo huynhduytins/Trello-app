@@ -1,4 +1,5 @@
 import AppsIcon from '@mui/icons-material/Apps'
+import ClearIcon from '@mui/icons-material/Clear'
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
 import LibraryAddIcon from '@mui/icons-material/LibraryAdd'
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone'
@@ -11,6 +12,7 @@ import SvgIcon from '@mui/material/SvgIcon'
 import TextField from '@mui/material/TextField'
 import Tooltip from '@mui/material/Tooltip'
 import Typography from '@mui/material/Typography'
+import { useState } from 'react'
 
 import TrelloLogo from '~/assets/trello.svg?react'
 import ModeSelect from '~/components/ModeSelect'
@@ -22,6 +24,8 @@ import Template from './Menus/Template'
 import WorkSpace from './Menus/WorkSpace'
 
 const AppBar = () => {
+  const [searchValue, setSearchValue] = useState('')
+
   return (
     <Box
       px={2}
@@ -99,18 +103,34 @@ const AppBar = () => {
         <TextField
           id="outlined-search"
           label="Search..."
-          type="search"
+          type="text"
           size="small"
+          value={searchValue}
+          onChange={(e) => {
+            setSearchValue(e.target.value)
+          }}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
                 <SearchIcon sx={{ color: 'white' }} />
               </InputAdornment>
+            ),
+            endAdornment: (
+              <ClearIcon
+                fontSize="small"
+                onClick={() => {
+                  setSearchValue('')
+                }}
+                sx={{
+                  color: searchValue ? 'white' : 'transparent',
+                  cursor: 'pointer'
+                }}
+              />
             )
           }}
           sx={{
             minWidth: '120px',
-            maxWidth: '170px',
+            maxWidth: '180px',
             '& label': {
               color: 'white'
             },
@@ -119,6 +139,11 @@ const AppBar = () => {
             },
             '& label.Mui-focused': {
               color: 'white'
+            },
+            '& .MuiOutlinedInput-root': {
+              '& fieldset': { borderColor: 'white' },
+              '&:hover fieldset': { borderColor: 'white' },
+              '&.Mui-focused fieldset': { borderColor: 'white' }
             }
           }}
         />

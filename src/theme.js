@@ -1,3 +1,4 @@
+import { red } from '@mui/material/colors'
 import { experimental_extendTheme as extendTheme } from '@mui/material/styles'
 
 const theme = extendTheme({
@@ -50,10 +51,16 @@ const theme = extendTheme({
       styleOverrides: {
         root: ({ theme }) => ({
           fontSize: '0.875rem',
-          '.MuiOutlinedInput-notchedOutline': {},
           '& fieldset': {
+            borderWidth: '0.5px !important'
+          },
+          '&:hover fieldset': {
             borderWidth: '1px !important'
           },
+          '&.Mui-focused fieldset': {
+            borderWidth: '1px !important'
+          },
+          '.MuiOutlinedInput-notchedOutline': {},
           '&:hover': {
             '.MuiOutlinedInput-notchedOutline': {}
           }
