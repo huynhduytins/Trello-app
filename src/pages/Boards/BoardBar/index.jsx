@@ -1,23 +1,24 @@
-import { Avatar, AvatarGroup, Box, Chip } from '@mui/material'
-import DashboardIcon from '@mui/icons-material/Dashboard'
-import VpnLockIcon from '@mui/icons-material/VpnLock'
 import AddToDriveIcon from '@mui/icons-material/AddToDrive'
 import BoltIcon from '@mui/icons-material/Bolt'
+import DashboardIcon from '@mui/icons-material/Dashboard'
 import FilterListIcon from '@mui/icons-material/FilterList'
 import PersonAddIcon from '@mui/icons-material/PersonAdd'
+import VpnLockIcon from '@mui/icons-material/VpnLock'
+import { Avatar, AvatarGroup, Box, Button, Chip } from '@mui/material'
 
 const MENU_STYLE = {
-  color: 'primary.main',
-  backgroundColor: 'white',
+  color: 'white',
+  backgroundColor: 'transparent',
   border: 'none',
   paddingX: '5px',
-  '& .MuiSvgIcon-root': {
-    color: 'primary.main'
+  '.MuiSvgIcon-root': {
+    color: 'white'
   },
   '&:hover': {
     bgcolor: 'primary.50'
   }
 }
+
 const BoardBar = () => {
   return (
     <Box
@@ -33,7 +34,9 @@ const BoardBar = () => {
         paddingX: 1,
         overflowX: 'auto',
         overflowY: 'hidden',
-        borderTop: '1px solid #00bfa5'
+        borderBottom: '1px solid white',
+        bgcolor: (theme) =>
+          theme.palette.mode === 'dark' ? '#34495e' : '#1976d2'
       }}
     >
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
@@ -69,13 +72,29 @@ const BoardBar = () => {
         />
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-        <Chip
-          sx={{ ...MENU_STYLE, border: '1px solid', borderRadius: '5px' }}
-          icon={<PersonAddIcon />}
-          label="Invite"
-          clickable
-        />
-        <AvatarGroup max={4}>
+        <Button
+          variant="outlined"
+          startIcon={<PersonAddIcon />}
+          sx={{
+            color: 'white',
+            borderColor: 'white',
+            '&:hover': { borderColor: 'white' }
+          }}
+        >
+          Invite
+        </Button>
+        <AvatarGroup
+          max={4}
+          sx={{
+            gap: '10px',
+            '.MuiAvatar-root': {
+              width: 34,
+              height: 34,
+              fontSize: 16,
+              border: 'none'
+            }
+          }}
+        >
           <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
           <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
           <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
