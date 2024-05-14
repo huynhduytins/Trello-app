@@ -58,24 +58,21 @@ const BoardContent = () => {
         >
           <Typography>Column Title</Typography>
           <Box>
-            <Button
-              id="basic-button-work-space"
-              aria-controls={open ? 'basic-menu-work-space' : undefined}
+            <ExpandMoreIcon
+              sx={{ color: 'text.primary', cursor: 'pointer' }}
+              id="basic-column-dropdown"
+              aria-controls={open ? 'basic-menu-column-dropdown' : undefined}
               aria-haspopup="true"
               aria-expanded={open ? 'true' : undefined}
               onClick={handleClick}
-              endIcon={<ExpandMoreIcon />}
-              sx={{ color: 'white' }}
-            >
-              WorkSpace
-            </Button>
+            />
             <Menu
-              id="basic-menu-work-space"
+              id="basic-menu-column-dropdown"
               anchorEl={anchorEl}
               open={open}
               onClose={handleClose}
               MenuListProps={{
-                'aria-labelledby': 'basic-button-work-space'
+                'aria-labelledby': 'basic-column-dropdown'
               }}
             >
               <MenuList>
