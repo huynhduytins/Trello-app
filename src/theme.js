@@ -1,5 +1,8 @@
 import { experimental_extendTheme as extendTheme } from '@mui/material/styles'
 
+const APP_BAR_HEIGHT = '58px'
+const BOT_BAR_HEIGHT = '56px'
+
 const theme = extendTheme({
   custom: {
     appBarHeight: '58px',
