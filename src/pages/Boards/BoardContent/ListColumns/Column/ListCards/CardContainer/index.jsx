@@ -8,16 +8,6 @@ import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
-import { keyframes } from '@mui/system'
-
-const spin = keyframes`
-  0% {
-    height: 500px
-  }
-  100% {
-    height: 0
-  }
-`
 
 const CardContainer = ({
   title,
