@@ -19,9 +19,9 @@ import Tooltip from '@mui/material/Tooltip'
 import Typography from '@mui/material/Typography'
 import { useState } from 'react'
 
-import { COLUMN_FOOTER_HEIGHT, COLUMN_HEADER_HEIHGT } from '../../constants'
+import ListCards from './ListCards'
 
-const Column = ({ children }) => {
+const Column = () => {
   const [anchorEl, setAnchorEl] = useState(null)
   const open = Boolean(anchorEl)
   const handleClick = (event) => {
@@ -46,7 +46,7 @@ const Column = ({ children }) => {
     >
       <Box
         sx={{
-          height: COLUMN_HEADER_HEIHGT,
+          height: (theme) => theme.custom.columnHeaderHeight,
           p: 2,
           display: 'flex',
           justifyContent: 'space-between',
@@ -129,10 +129,10 @@ const Column = ({ children }) => {
           </Menu>
         </Box>
       </Box>
-      {children}
+      <ListCards />
       <Box
         sx={{
-          height: COLUMN_FOOTER_HEIGHT,
+          height: (theme) => theme.custom.columnFooterHeight,
           p: 2,
           display: 'flex',
           justifyContent: 'space-between',

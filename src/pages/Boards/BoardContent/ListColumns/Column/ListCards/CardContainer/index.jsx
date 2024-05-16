@@ -19,27 +19,31 @@ const CardContainer = ({
   handleClickCard,
   idx
 }) => {
-  return isOpen ? (
-    <Card>
-      <CardActionArea>
-        <CardMedia component="img" height="140" image={img} alt="" />
-        <CardContent sx={{ p: 1.5 }}>
-          <Typography>{title}</Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary" startIcon={<PeopleIcon />}>
-          {contributors}
-        </Button>
-        <Button size="small" color="primary" startIcon={<ModeCommentIcon />}>
-          {comments}
-        </Button>
-        <Button size="small" color="primary" startIcon={<AttachmentIcon />}>
-          {attachments}
-        </Button>
-      </CardActions>
-    </Card>
-  ) : (
+  if (isOpen) {
+    return (
+      <Card>
+        <CardActionArea>
+          <CardMedia component="img" height="140" image={img} alt="" />
+          <CardContent sx={{ p: 1.5 }}>
+            <Typography>{title}</Typography>
+          </CardContent>
+        </CardActionArea>
+        <CardActions>
+          <Button size="small" color="primary" startIcon={<PeopleIcon />}>
+            {contributors}
+          </Button>
+          <Button size="small" color="primary" startIcon={<ModeCommentIcon />}>
+            {comments}
+          </Button>
+          <Button size="small" color="primary" startIcon={<AttachmentIcon />}>
+            {attachments}
+          </Button>
+        </CardActions>
+      </Card>
+    )
+  }
+
+  return (
     <Card onClick={() => handleClickCard(idx)}>
       <CardActionArea>
         <CardContent sx={{ p: 1.5 }}>

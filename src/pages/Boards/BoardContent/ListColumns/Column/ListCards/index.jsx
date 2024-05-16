@@ -1,7 +1,6 @@
 import Box from '@mui/material/Box'
 import { useState } from 'react'
 
-import { COLUMN_FOOTER_HEIGHT, COLUMN_HEADER_HEIHGT } from '../../../constants'
 import data from '../../../mockdata'
 import CardContainer from './CardContainer'
 
@@ -23,9 +22,9 @@ const ListCards = () => {
         overflowX: 'hidden',
         overflowY: 'auto',
         maxHeight: (theme) =>
-          `calc(${theme.custom.boardContentHeight} - ${theme.spacing(
-            5
-          )} - ${COLUMN_FOOTER_HEIGHT} - ${COLUMN_HEADER_HEIHGT})`,
+          `calc(${theme.custom.boardContentHeight} - ${theme.spacing(5)} - ${
+            theme.custom.columnHeaderHeight
+          } - ${theme.custom.columnFooterHeight})`,
         '& .MuiPaper-root': {
           overflow: 'unset'
         },
