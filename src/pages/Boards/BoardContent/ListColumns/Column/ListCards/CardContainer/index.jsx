@@ -1,7 +1,6 @@
 import AttachmentIcon from '@mui/icons-material/Attachment'
 import ModeCommentIcon from '@mui/icons-material/ModeComment'
 import PeopleIcon from '@mui/icons-material/People'
-import { Box, Collapse } from '@mui/material'
 import Button from '@mui/material/Button'
 import Card from '@mui/material/Card'
 import CardActionArea from '@mui/material/CardActionArea'
@@ -51,15 +50,13 @@ const CardContainer = ({
       </CardActions>
     </Card>
   ) : (
-    <Box>
-      <Card onClick={() => handleClickCard(idx)}>
-        <CardActionArea>
-          <CardContent sx={{ p: 1.5 }}>
-            <Typography>Lizard</Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
-    </Box>
+    <Card onClick={() => handleClickCard(idx)}>
+      <CardActionArea>
+        <CardContent sx={{ p: 1.5 }}>
+          <Typography>Lizard</Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
   )
 }
 
