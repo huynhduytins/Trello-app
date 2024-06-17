@@ -29,26 +29,28 @@ const CardContainer = ({
           }
         }}
       >
-        <Card sx={{ height: `${100}px`, transition: 'height 2s' }}>
+        <Card sx={{}}>
           <CardActionArea>
-            <CardMedia component="img" height="140" image={img} alt="" />
+            {img && (
+              <CardMedia component="img" height="140" image={img} alt="" />
+            )}
             <CardContent sx={{ p: 1.5 }}>
               <Typography>{title}</Typography>
             </CardContent>
           </CardActionArea>
           <CardActions>
             <Button size="small" color="primary" startIcon={<PeopleIcon />}>
-              {contributors}
+              {contributors.length}
             </Button>
             <Button
               size="small"
               color="primary"
               startIcon={<ModeCommentIcon />}
             >
-              {comments}
+              {comments.length}
             </Button>
             <Button size="small" color="primary" startIcon={<AttachmentIcon />}>
-              {attachments}
+              {attachments.length}
             </Button>
           </CardActions>
         </Card>
@@ -60,7 +62,7 @@ const CardContainer = ({
     <Card onClick={() => handleClickCard(idx)}>
       <CardActionArea>
         <CardContent sx={{ p: 1.5 }}>
-          <Typography>Lizard</Typography>
+          <Typography>{title}</Typography>
         </CardContent>
       </CardActionArea>
     </Card>

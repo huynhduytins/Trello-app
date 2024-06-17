@@ -21,7 +21,7 @@ import { useState } from 'react'
 
 import ListCards from './ListCards'
 
-const Column = () => {
+const Column = ({ columnContent }) => {
   const [anchorEl, setAnchorEl] = useState(null)
   const open = Boolean(anchorEl)
   const handleClick = (event) => {
@@ -54,7 +54,7 @@ const Column = () => {
         }}
       >
         <Typography variant="h6" sx={{ fontWeight: 'bold', cursor: 'pointer' }}>
-          Column Title
+          {columnContent.title}
         </Typography>
         <Box>
           <Tooltip title="More options">
@@ -129,7 +129,7 @@ const Column = () => {
           </Menu>
         </Box>
       </Box>
-      <ListCards />
+      <ListCards cards={columnContent.cards} />
       <Box
         sx={{
           height: (theme) => theme.custom.columnFooterHeight,

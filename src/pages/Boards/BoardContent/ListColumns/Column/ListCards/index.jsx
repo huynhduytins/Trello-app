@@ -1,11 +1,10 @@
 import Box from '@mui/material/Box'
 import { useState } from 'react'
 
-import data from '../../../mockdata'
 import CardContainer from './CardContainer'
 
-const ListCards = () => {
-  const [openedCard, setOpenedCard] = useState(0)
+const ListCards = ({ cards }) => {
+  const [openedCard, setOpenedCard] = useState(cards[0]._id)
 
   const handleClickCard = (idx) => {
     setOpenedCard(idx)
@@ -36,17 +35,17 @@ const ListCards = () => {
         }
       }}
     >
-      {data.map((el, idx) => (
+      {cards.map((card) => (
         <CardContainer
-          attachments={el.attachments}
-          comments={el.comments}
-          contributors={el.contributors}
-          img={el.img}
-          isOpen={openedCard === idx}
-          title={el.title}
-          key={idx}
+          attachments={card.attachments}
+          comments={card.comments}
+          contributors={card.memberIds}
+          img={card.cover}
+          isOpen={openedCard === card._id}
+          title={card.title}
+          key={card._id}
           handleClickCard={handleClickCard}
-          idx={idx}
+          idx={card._id}
         />
       ))}
     </Box>

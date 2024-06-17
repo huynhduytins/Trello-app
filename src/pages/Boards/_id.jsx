@@ -1,5 +1,6 @@
 import Container from '@mui/material/Container'
 
+import { mockData } from '~/apis/mock-data'
 import AppBar from '~/components/AppBar'
 
 import BoardBar from './BoardBar'
@@ -15,8 +16,8 @@ const Board = () => {
       maxWidth={false}
     >
       <AppBar />
-      <BoardBar />
-      <BoardContent />
+      <BoardBar board={mockData.board} />
+      <BoardContent board={mockData.board} />
     </Container>
   )
 }

@@ -4,7 +4,11 @@ import DashboardIcon from '@mui/icons-material/Dashboard'
 import FilterListIcon from '@mui/icons-material/FilterList'
 import PersonAddIcon from '@mui/icons-material/PersonAdd'
 import VpnLockIcon from '@mui/icons-material/VpnLock'
-import { Avatar, AvatarGroup, Box, Button, Chip } from '@mui/material'
+import Avatar from '@mui/material/Avatar'
+import AvatarGroup from '@mui/material/AvatarGroup'
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Chip from '@mui/material/Chip'
 
 const MENU_STYLE = {
   color: 'white',
@@ -19,7 +23,7 @@ const MENU_STYLE = {
   }
 }
 
-const BoardBar = () => {
+const BoardBar = ({ board }) => {
   return (
     <Box
       sx={{
@@ -43,7 +47,7 @@ const BoardBar = () => {
         <Chip
           sx={MENU_STYLE}
           icon={<DashboardIcon />}
-          label="Dashboard"
+          label={board.title}
           clickable
         />
         <Chip
